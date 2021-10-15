@@ -1,4 +1,4 @@
-package com.example.margaritame.ui.notifications
+package com.example.bottomsup.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

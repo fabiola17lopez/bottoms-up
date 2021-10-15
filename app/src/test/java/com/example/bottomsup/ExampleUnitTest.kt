@@ -1,4 +1,4 @@
-package com.example.margaritame
+package com.example.bottomsup
 
 import org.junit.Test
 
