@@ -1,4 +1,4 @@
-package com.example.margaritame.ui.dashboard
+package com.example.bottomsup.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
