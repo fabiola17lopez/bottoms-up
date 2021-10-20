@@ -15,7 +15,7 @@ class BrowseFragment : Fragment() {
 
     private lateinit var browsePresenter: BrowsePresenter
     private var _binding: FragmentBrowseBinding? = null
-    private lateinit var categoryAdapter: CategoryAdapter
+    private lateinit var browseAdapter: BrowseAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,10 +28,7 @@ class BrowseFragment : Fragment() {
     ): View? {
         _binding = FragmentBrowseBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         browsePresenter = BrowsePresenter()
-
-        binding.textBrowse.text = getString(R.string.browse_by_category)
 
         setCategoryList()
         return root
@@ -40,11 +37,10 @@ class BrowseFragment : Fragment() {
     private fun setCategoryList() {
         val data = browsePresenter.getData()
 
-        categoryAdapter = CategoryAdapter(data)
+        browseAdapter = BrowseAdapter(data)
         binding.categoryList.apply {
-            adapter = categoryAdapter
+            adapter = browseAdapter
             layoutManager = LinearLayoutManager(context)
-            addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
         }
     }
 
