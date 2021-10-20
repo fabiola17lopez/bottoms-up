@@ -1,22 +1,20 @@
-package com.example.bottomsup.ui.home
+package com.example.bottomsup.ui.browse
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bottomsup.databinding.FragmentHomeBinding
+import com.example.bottomsup.R
+import com.example.bottomsup.databinding.FragmentBrowseBinding
 
-class HomeFragment : Fragment() {
+class BrowseFragment : Fragment() {
 
-    private lateinit var homePresenter: HomePresenter
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var browsePresenter: BrowsePresenter
+    private var _binding: FragmentBrowseBinding? = null
     private lateinit var categoryAdapter: CategoryAdapter
 
     // This property is only valid between onCreateView and
@@ -28,19 +26,19 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentBrowseBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        homePresenter = HomePresenter()
+        browsePresenter = BrowsePresenter()
 
-        binding.textHome.text = "Featured"
+        binding.textBrowse.text = getString(R.string.browse_by_category)
 
         setCategoryList()
         return root
     }
 
     private fun setCategoryList() {
-        val data = homePresenter.getData()
+        val data = browsePresenter.getData()
 
         categoryAdapter = CategoryAdapter(data)
         binding.categoryList.apply {

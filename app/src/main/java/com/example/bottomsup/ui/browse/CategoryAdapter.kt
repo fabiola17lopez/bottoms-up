@@ -1,4 +1,4 @@
-package com.example.bottomsup.ui.home
+package com.example.bottomsup.ui.browse
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

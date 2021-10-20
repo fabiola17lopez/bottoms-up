@@ -1,8 +1,8 @@
-package com.example.bottomsup.ui.home
+package com.example.bottomsup.ui.browse
 
 import com.example.bottomsup.data.RecipeRepository
 
-class HomePresenter {
+class BrowsePresenter {
     val recipeRepository = RecipeRepository()
 
     fun getData(): List<String> {
